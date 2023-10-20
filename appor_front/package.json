@@ -1,0 +1,43 @@
+{
+  "name": "heis_front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@internationalized/date": "^3.5.0",
+    "axios": "^1.5.1",
+    "date-fns": "^2.30.0",
+    "dayjs": "^1.11.10",
+    "material-ui-datetime-range-picker": "^1.0.0",
+    "next": "latest",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-date-range": "^1.4.0",
+    "react-dom": "latest",
+    "recoil": "^0.7.7",
+    "rsuite": "^5.40.0",
+    "tw-elements": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-date-range": "^1.4.5",
+    "@types/react-dom": "latest",
+    "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "faker": "^6.6.6",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  }
+}

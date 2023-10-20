@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.vertical-line {
+    border-left: 2px solid rgb(149, 148, 148);
+    height: 90px;
+    position: absolute;
+    margin-left: 8px;
+    margin-top: 16px;
+    z-index: -10;
+}
+
+.active-bullet {
+    margin-left: -28px;
+    background: #ffffff71;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.vert-line {
+    border-left: 2px solid rgb(149, 148, 148);
+    height: 30px;
+    margin-left: 10px;
+    padding-left: 15px;
+}

@@ -1,11 +1,18 @@
-import React from 'react';
+'use client'
+import React, { FormEvent } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import sign_up_bg from '../../assets/images/sign_up_bg.png';
-
+import sign_up_bg from '../../assets/images/sign_up_bg_png.png'
+import { useRouter } from 'next/navigation'
+;
 
 
 const CheckMail: React.FC = () => {
+  const router = useRouter();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push('/famers/register');
+  };
   return (
     <div className="overflow-hidden h-screen">
     <main className="flex flex-row w-full bg-slate-50">
@@ -24,11 +31,8 @@ const CheckMail: React.FC = () => {
             <p className="text-stone-300 text-xs font-medium font-poppins">Step 2 of 3</p>
             <Link href="/signup" className="text-slate-400 text-xs font-bold font-poppins underline">Previous</Link>
           </div>
-          <div>
-            <p className="text-stone-300 text-xs font-medium font-poppins">Step 3 of 3</p>
-            <Link href="/signup" className="text-slate-400 text-xs font-bold font-poppins underline">Next</Link>
-          </div>
         </div>
+        <form onSubmit={handleSubmit}>
         <div className="p-10 sm:m-10 mx-4">
           <h1 className="text-2xl font-bold text-left font-poppins">Check your Mail</h1>
           <p className="text-slate-400 text-base text-left mt-5">
@@ -48,14 +52,17 @@ const CheckMail: React.FC = () => {
 
 
           <div className="px-8 py-4">
-          <Link href="/resend-code" passHref>
+          <Link href="/signup_verify">
             <p className="mt-4 text-slate-400 text-base text-left font-bold font-poppins cursor-pointer m-1.8">Resend Code</p>
           </Link>
-          <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 w-full rounded">
+          <button 
+           type='submit'
+           className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 w-full rounded">
               Verify
           </button>
           </div>
         </div>
+        </form>
       </div>
     </main>
     </div>

@@ -1,18 +1,26 @@
-/* eslint-disable react/no-unescaped-entities */
+ 'use client'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { FormInput } from '@/components/form_input'
 import { CheckToggle } from '@/components/check_toggle'
 import logo from '../assets/images/heis_logo.png'
+import { FormEvent } from 'react'
+import { link } from 'fs'
 
 export default function Home() {
-  
+  const router = useRouter();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push('/dashboard/heis');
+  };
+
   return (
     <main className="sm:flex sm:flex-row bg-slate-300 bg-[url('../assets/images/login_bg.png')]">
       <div className="lg:w-1/2 w-full py-28 h-screen">
         <h1 className="text-4xl font-bold text-white pt-8 pb-2 text-center">Welcome Back</h1>
         <p className="text-center text-slate-400 text-lg font-bold font-['Poppins'] leading-tight">Enter your email and password to sign in</p>
-        <form>
+        <form onSubmit={handleSubmit}>
         <div className="py-8 sm:px-8">
           <FormInput 
             labelClass="text-gray-700 text-sm text-white font-normal font-['Poppins']"
@@ -43,13 +51,15 @@ export default function Home() {
           />
           </div>
           <div className="px-16">
-            <button className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 w-full rounded-xl">
+            <button 
+            type='submit'
+            className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 w-full rounded-xl">
               SIGN IN
             </button>
           </div>
           <div className="text-center py-4">
           <Link href="/forget" className="text-center text-green-500 font-extrabold font-['Poppins'] leading-tight">Forgot Password?</Link>
-          <p className="text-white">Don't have an account? <Link href="/signup" className="text-center text-green-500 font-extrabold font-['Poppins'] leading-tight">Sign Up</Link></p>
+          <p className="text-white">Don't have an account? <Link href="/registration" className="text-center text-green-500 font-extrabold font-['Poppins'] leading-tight">Sign Up</Link></p>
           </div>
         </div>
         </form>

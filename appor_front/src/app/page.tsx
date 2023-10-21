@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FormInput } from '@/components/form_input'
 import { CheckToggle } from '@/components/check_toggle'
-import logo from '../assets/images/heis_logo.png'
+import logo from '../assets/images/appor_logo.png'
 
 export default function Home() {
   
@@ -63,7 +63,7 @@ export default function Home() {
           className="max-w-lg mx-auto pt-4"
         />
         <h1 className="text-4xl font-bold text-white pt-8 py-2 text-center">Welcome</h1>
-        <h1 className="text-4xl font-bold text-white py-2 text-center">HORTICULTURAL EXPORTERS INFORMATION SYSTEM - HEIS</h1>
+        <h1 className="text-4xl font-bold text-white py-2 text-center">HORTICULTURAL EXPORTERS INFORMATION SYSTEM - appor</h1>
 
       </div>
     </main>

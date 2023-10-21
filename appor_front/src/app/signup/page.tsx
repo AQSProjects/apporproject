@@ -25,7 +25,7 @@ function Signup() {
                 <Link href="/" className="text-slate-400 text-xs font-bold font-['Poppins'] underline"> Next </Link>
             </div>
         </div>
-        <p className="text-slate-400 text-base font-bold font-['Poppins'] text-center py-8">Fill In The Company Representative Info</p>
+        <p className="text-slate-400 text-base font-bold font-['Poppins'] text-center py-8">Fill In The pharmacy Representative Info</p>
         
         <form>
           <div className="px-8 w-full">     
@@ -62,7 +62,7 @@ function Signup() {
                 labelName='Representative Phone Number' 
                 inputType='text' 
                 inputClass='border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' 
-                inputName='companyPhone' 
+                inputName='pharmacyPhone' 
                 inputPlaceholder='(+250) 7888321' 
               />
           </div>

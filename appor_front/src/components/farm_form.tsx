@@ -92,11 +92,11 @@ function Farm_form() {
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="w-full sm:pr-4"
-                labelName='Farmer Code'
+                labelName='pharmacist Code'
                 inputType='text'
                 inputClass='border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
-                inputName='farmerCode'
-                inputPlaceholder='Farmer Code'
+                inputName='pharmacistCode'
+                inputPlaceholder='pharmacist Code'
               />
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"

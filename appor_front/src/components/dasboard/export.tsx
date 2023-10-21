@@ -42,7 +42,7 @@ export const data = {
     {
       label: "Dataset 1",
       data: generateRandomData(),
-      borderColor: "rgb(21, 150, 74)",
+      borderColor: "rgb(79, 63, 248)",
       backgroundColor: "gray",
       fill: {
         target: "origin", // Set the fill options
@@ -52,8 +52,8 @@ export const data = {
     {
       label: "Dataset 2",
       data: generateRandomData(),
-      borderColor: "rgb(25, 220, 74)",
-      backgroundColor: "rgba(49, 114, 49, 0.389)",
+      borderColor: "rgb(25, 35, 220)",
+      backgroundColor: "rgba(0, 40, 218, 0.614)",
       fill: "origin" // Set the fill options
     }
   ]

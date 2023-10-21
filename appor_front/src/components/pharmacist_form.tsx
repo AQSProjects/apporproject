@@ -16,7 +16,7 @@ interface Elements {
 
 const exporter: Elements[] = [
     { id: 1, name: 'Individual', link: '/registration/individual' },
-    { id: 2, name: 'Company', link: '/' }
+    { id: 2, name: 'pharmacy', link: '/' }
   ]
   
   const province: Elements[] = [
@@ -56,11 +56,11 @@ const exporter: Elements[] = [
 function Farner_form({ num }: InputProps) {
   return (
     <>
-    <h1 className="text-2xl font-bold py-4 text-center">Farmer {num}</h1>
+    <h1 className="text-2xl font-bold py-4 text-center">pharmacist {num}</h1>
        <FormInput
          labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
          containerClass="px-8 w-full"
-         labelName='Farmer Full Name'
+         labelName='pharmacist Full Name'
          inputType='text'
          inputClass='border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
          inputName='fullName'
@@ -69,19 +69,19 @@ function Farner_form({ num }: InputProps) {
         <FormInput
          labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
          containerClass="px-8 w-full"
-         labelName='Farmer Email'
+         labelName='pharmacist Email'
          inputType='text'
          inputClass='border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
-         inputName='farmerMail'
-         inputPlaceholder='Farmer@farm.com'
+         inputName='pharmacistMail'
+         inputPlaceholder='pharmacist@farm.com'
         />
        <FormInput
          labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
          containerClass="px-8 py-2" 
-         labelName='Farmer Phone Number' 
+         labelName='pharmacist Phone Number' 
          inputType='text' 
          inputClass='border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' 
-         inputName='farmerPhone' 
+         inputName='pharmacistPhone' 
          inputPlaceholder='(+250) 7888321' 
        />
        <div className="py-2 px-8 sm:flex sm:flex-row sm:justify-between">
@@ -108,7 +108,7 @@ function Farner_form({ num }: InputProps) {
          elements={cell}
        />
    </div>
-   <h1 className="text-2xl font-bold py-4 text-center">Farmer's farm info</h1>
+   <h1 className="text-2xl font-bold py-4 text-center">pharmacist's farm info</h1>
    <div className="py-2 px-8 sm:flex sm:flex-row sm:justify-between">
         <FormInput
           labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
@@ -132,11 +132,11 @@ function Farner_form({ num }: InputProps) {
     <FormInput
          labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
          containerClass="px-8 w-full"
-         labelName='Farmer Code'
+         labelName='pharmacist Code'
          inputType='text'
          inputClass='border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
-         inputName='farmerCode'
-         inputPlaceholder='Farmer Code'
+         inputName='pharmacistCode'
+         inputPlaceholder='pharmacist Code'
         />
         <FormInput
          labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
@@ -158,10 +158,10 @@ function Farner_form({ num }: InputProps) {
        />
         <FileUpload 
               labelClass= "text-gray-700 text-sm font-normal font-['Poppins']"
-              labelName=  "Upload farmer contract"
+              labelName=  "Upload pharmacist contract"
               inputType= "file"
               inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
-              inputName= "farmer contract"
+              inputName= "pharmacist contract"
               containerClass= "px-8 py-2"
               />
     </>

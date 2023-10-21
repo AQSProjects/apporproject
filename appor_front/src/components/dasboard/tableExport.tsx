@@ -4,28 +4,23 @@ function ExportTable() {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg m-2">
         <table className="w-full text-sm text-left text-gray-500">
-            <thead className="text-xs text-green-700 bg-gray-50">
+            <thead className="text-xs text-blue-700 bg-gray-50">
                 <tr>
                     <th scope="col" className="px-1 py-2">
-                        H.S.Code
+                        License
                     </th>
                     <th scope="col" className="px-1 py-2">
-                        Crop Type
+                        Name
                     </th>
                     <th scope="col" className="px-1 py-2">
-                        Crop Volume <br /> (Tone)
+                        Pharmacy
+                    </th>
+                    
+                    <th scope="col" className="px-1 py-2">
+                        Role
                     </th>
                     <th scope="col" className="px-1 py-2">
-                        Toatal Price <br />(Rwf)
-                    </th>
-                    <th scope="col" className="px-1 py-2">
-                        Expected Harvesting <br /> Period
-                    </th>
-                    <th scope="col" className="px-1 py-2">
-                        Area of Harvest <br /> (m²)
-                    </th>
-                    <th scope="col" className="px-1 py-2">
-                        Destination Country
+                        License Expiry Date
                     </th>
                     
                 </tr>
@@ -33,7 +28,9 @@ function ExportTable() {
             <tbody>
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" className="px-1 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    342434243424
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="" viewBox="0 0 16 16">
+                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                    </svg>
                     </th>
                     <td className="px-1 py-2">
                         Habanero
@@ -47,16 +44,13 @@ function ExportTable() {
                     <td className="px-1 py-2">
                         October 2022
                     </td>
-                    <td className="px-1 py-2">
-                        269.5
-                    </td>
-                    <td className="px-1 py-2">
-                        Burundi
-                    </td>
+                    
                 </tr>
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" className="px-1 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    342434243424
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="" viewBox="0 0 16 16">
+                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                    </svg>
                     </th>
                     <td className="px-1 py-2">
                         Habanero
@@ -70,16 +64,13 @@ function ExportTable() {
                     <td className="px-1 py-2">
                         October 2022
                     </td>
-                    <td className="px-1 py-2">
-                        269.5
-                    </td>
-                    <td className="px-1 py-2">
-                        Burundi
-                    </td>
+                    
                 </tr>
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" className="px-1 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    342434243424
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="" viewBox="0 0 16 16">
+                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                    </svg>
                     </th>
                     <td className="px-1 py-2">
                         Habanero
@@ -93,16 +84,13 @@ function ExportTable() {
                     <td className="px-1 py-2">
                         October 2022
                     </td>
-                    <td className="px-1 py-2">
-                        269.5
-                    </td>
-                    <td className="px-1 py-2">
-                        Burundi
-                    </td>
+                    
                 </tr>
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" className="px-1 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        342434243424
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="" viewBox="0 0 16 16">
+                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+                    </svg>
                     </th>
                     <td className="px-1 py-2">
                         Habanero
@@ -116,12 +104,7 @@ function ExportTable() {
                     <td className="px-1 py-2">
                         October 2022
                     </td>
-                    <td className="px-1 py-2">
-                        269.5
-                    </td>
-                    <td className="px-1 py-2">
-                        Burundi
-                    </td>
+                    
                 </tr>
                 
             </tbody>

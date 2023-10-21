@@ -56,7 +56,7 @@ export default function Individual() {
 const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if(event.target.value === 'individual'){
       setIsEmployee(false)
-    } else if(event.target.value === 'company'){
+    } else if(event.target.value === 'pharmacy'){
       setIsEmployee(true)
     }
     setIsEmployee(!isEmployee);
@@ -75,7 +75,7 @@ const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       </div>
       <div className="bg-slate-50 lg:w-1/2 w-full">
         <h1 className="text-2xl font-bold py-8 text-center">Register your account</h1>
-        <p className="text-slate-400 text-base font-bold font-['Poppins'] text-center pb-8">Fill the details bellow of {isEmployee? 'Exporter':'Company'} Information</p>
+        <p className="text-slate-400 text-base font-bold font-['Poppins'] text-center pb-8">Fill the details bellow of {isEmployee? 'Exporter':'pharmacy'} Information</p>
         
         <form>
           <div className="px-8 sm:flex sm:flex-row sm:justify-between w-full">     
@@ -83,24 +83,24 @@ const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
                 <label htmlFor="text" className="text-gray-700 text-sm font-normal font-['Poppins']">Exporter</label>
                 <select id="countries" onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option className='py-2 ' value="individual">Individual</option>
-                  <option className='py-2 ' value="company">Company</option>
+                  <option className='py-2 ' value="pharmacy">pharmacy</option>
                 </select>
               </div>
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="w-full sm:pl-4"
-                labelName={isEmployee? 'Exporter Name':'Company Name'}
+                labelName={isEmployee? 'Exporter Name':'pharmacy Name'}
                 inputType='text'
                 inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
                 inputName='ExporterName'
-                inputPlaceholder={isEmployee? 'Exporter Name':'Company Name'}
+                inputPlaceholder={isEmployee? 'Exporter Name':'pharmacy Name'}
                />
           </div>
           <div className="px-8 sm:flex sm:flex-row sm:justify-between">
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="w-full sm:pr-4"
-                labelName={isEmployee? 'Exporter Email':'Company Email'}
+                labelName={isEmployee? 'Exporter Email':'pharmacy Email'}
                 inputType='email'
                 inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
                 inputName='exporterEmail'
@@ -109,18 +109,18 @@ const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="w-full sm:pl-4"
-                labelName={isEmployee? 'Exporter TIN':'Company TIN'}
+                labelName={isEmployee? 'Exporter TIN':'pharmacy TIN'}
                 inputType='number'
                 inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
                 inputName='exporterTIN'
-                inputPlaceholder={isEmployee? 'Exporter TIN':'Company TIN'}
+                inputPlaceholder={isEmployee? 'Exporter TIN':'pharmacy TIN'}
               />
           </div>
             {isEmployee ? 
             <FormInput
               labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
               containerClass="px-8 w-full"
-              labelName={isEmployee? 'Exporter ID/Passport':'Company TIN'}
+              labelName={isEmployee? 'Exporter ID/Passport':'pharmacy TIN'}
               inputType='nationalId'
               inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
               inputName='representativeEmail'
@@ -131,7 +131,7 @@ const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="px-8 py-2" 
-                labelName= {isEmployee? 'Exporter Phone Numbe':'Company Phone Numbe'} 
+                labelName= {isEmployee? 'Exporter Phone Numbe':'pharmacy Phone Numbe'} 
                 inputType='text' 
                 inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' 
                 inputName='exporterPhone' 

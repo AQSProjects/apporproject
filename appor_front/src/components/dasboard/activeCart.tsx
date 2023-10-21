@@ -28,14 +28,14 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Active Users Chart',
+      text: 'Active Licenses Chart',
       color: 'white',
     },
   },
   scales: {
     y: {
       ticks: {
-        color: 'blue',
+        color: 'white',
       },
     },
     x: {

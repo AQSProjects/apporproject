@@ -1,6 +1,6 @@
 'use client'
 import Farm_form from '@/components/farm_form';
-import Farner_form from '@/components/farner_form';
+import Farner_form from '@/components/pharmacist_form';
 import { FileUpload } from '@/components/file_upload';
 import FormDropdown from '@/components/form_dropdown';
 import { FormInput } from '@/components/form_input';
@@ -11,18 +11,18 @@ import { SetStateAction, useState } from 'react'
 
 
 export default function Home() {
-    const [farmerSideBar, setFarmerSideBar] = useState('Farm info');
-    const [farmerList, setFarmerList] = useState<React.ReactNode[]>([]);
+    const [pharmacistSideBar, setpharmacistSideBar] = useState('Farm info');
+    const [pharmacistList, setpharmacistList] = useState<React.ReactNode[]>([]);
     const [menu, setMenu] = useState(false)
 
     const onAddBtnClick = (event: React.MouseEvent) => {
-      const newFarmer = <Farner_form  num={farmerList.length + 1}/>
+      const newpharmacist = <Farner_form  num={pharmacistList.length + 1}/>
 
-      setFarmerList([...farmerList, newFarmer]);
+      setpharmacistList([...pharmacistList, newpharmacist]);
       };
 
     const handleClick = (data: SetStateAction<string>) => {
-        setFarmerSideBar(data);
+        setpharmacistSideBar(data);
       };
 
       const menuClick = (event: any) => {
@@ -51,11 +51,11 @@ export default function Home() {
         </div>
         <div className="fixed " onClick={menuClick}>
 
-            {(farmerSideBar === 'Required Documents')?<div className='vertical-line'></div>:<div className='vertical-line'></div>}
+            {(pharmacistSideBar === 'Required Documents')?<div className='vertical-line'></div>:<div className='vertical-line'></div>}
         <ul className='z-20'>
-            {(farmerSideBar === 'Farm info')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Farm info</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Farm info')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Farm info</li>}
-            {(farmerSideBar === 'Required Documents')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Required Documents</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Required Documents')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Required Documents</li>}
-            {(farmerSideBar === 'Confirm')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Confirm</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Confirm')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Confirm</li>}
+            {(pharmacistSideBar === 'Farm info')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Farm info</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Farm info')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Farm info</li>}
+            {(pharmacistSideBar === 'Required Documents')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Required Documents</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Required Documents')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Required Documents</li>}
+            {(pharmacistSideBar === 'Confirm')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Confirm</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Confirm')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Confirm</li>}
         </ul>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function Home() {
           </svg>
         </div>
         <form>
-          <div className={(farmerSideBar === 'Farm info')?'block':'hidden'}>
+          <div className={(pharmacistSideBar === 'Farm info')?'block':'hidden'}>
             <h1 className="text-2xl font-bold py-4 text-center">Register your account</h1>
             <div className="px-8 sm:flex sm:flex-row sm:justify-between">
             <div className="w-1/2 sm:pr-4" >
@@ -79,12 +79,12 @@ export default function Home() {
                 </div>
             </div>
            {haveFarm?<Farm_form />:''}   
-           {farmerList}
-           <p className="cursor-pointer flex text-slate-600 text-md py-4 px-8 font-bold font-['Roboto']" onClick={onAddBtnClick}>Add Farmer<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="text-green-700 mt-1 ml-1" viewBox="0 0 16 16">
+           {pharmacistList}
+           <p className="cursor-pointer flex text-slate-600 text-md py-4 px-8 font-bold font-['Roboto']" onClick={onAddBtnClick}>Add pharmacist<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="text-green-700 mt-1 ml-1" viewBox="0 0 16 16">
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
             </svg></p>
           </div>
-          <div className={(farmerSideBar === 'Required Documents')?'block pb-24':'hidden'}>
+          <div className={(pharmacistSideBar === 'Required Documents')?'block pb-24':'hidden'}>
             <h1 className="text-2xl font-bold py-4 text-center">Required documents</h1>
             
             <FileUpload 
@@ -133,7 +133,7 @@ export default function Home() {
               />
           </div>
 
-          <div className={(farmerSideBar === 'Confirm')?'block':'hidden'}>
+          <div className={(pharmacistSideBar === 'Confirm')?'block':'hidden'}>
             <h1 className="text-2xl font-bold py-4 text-center">Review & Submit</h1>
             <div className="h-96"></div>
           </div>

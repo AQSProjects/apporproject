@@ -6,8 +6,8 @@ import { ExportChart } from '@/components/dasboard/export'
 import { ActiveChart } from '@/components/dasboard/activeCart'
 import ExportTable from '@/components/dasboard/tableExport'
 import Link from 'next/link'
-import CompanyCard from '@/components/dasboard/companyCard'
-import FarmerCard from '@/components/dasboard/farmersCard'
+import pharmacyCard from '@/components/dasboard/pharmacyCard'
+import pharmacistCard from '@/components/dasboard/pharmacistsCard'
 
 function SuperUserDashboard() {
   return (
@@ -93,32 +93,32 @@ function SuperUserDashboard() {
 
             </div>
             <div className="bg-white mx-2 sm:w-1/4 w-full rounded-md">
-                <h3 className="font-semibold text-md text-gray-500 pl-2 py-2">List Of Farmers</h3>
+                <h3 className="font-semibold text-md text-gray-500 pl-2 py-2">List Of pharmacists</h3>
             
-                <FarmerCard 
-                    farmerName="Theodore Baganizi"
-                    farmerClass="font-semibold text-black text-md"
+                <pharmacistCard 
+                    pharmacistName="Theodore Baganizi"
+                    pharmacistClass="font-semibold text-black text-md"
                     idNo="XXXXXXXXXX"
                     idClass="text-gray-400 text-sm"
                     containerClass="m-2 px-2 py-2 rounded-lg bg-slate-100"
                 />
-                <FarmerCard 
-                    farmerName="Theodore Baganizi"
-                    farmerClass="font-semibold text-black text-md"
+                <pharmacistCard 
+                    pharmacistName="Theodore Baganizi"
+                    pharmacistClass="font-semibold text-black text-md"
                     idNo="XXXXXXXXXX"
                     idClass="text-gray-400 text-sm"
                     containerClass="m-2 px-2 py-2 rounded-lg bg-slate-100"
                 />
-                <FarmerCard 
-                    farmerName="Theodore Baganizi"
-                    farmerClass="font-semibold text-black text-md"
+                <pharmacistCard 
+                    pharmacistName="Theodore Baganizi"
+                    pharmacistClass="font-semibold text-black text-md"
                     idNo="XXXXXXXXXX"
                     idClass="text-gray-400 text-sm"
                     containerClass="m-2 px-2 py-2 rounded-lg bg-slate-100"
                 />
-                <FarmerCard 
-                    farmerName="Theodore Baganizi"
-                    farmerClass="font-semibold text-black text-md"
+                <pharmacistCard 
+                    pharmacistName="Theodore Baganizi"
+                    pharmacistClass="font-semibold text-black text-md"
                     idNo="XXXXXXXXXX"
                     idClass="text-gray-400 text-sm"
                     containerClass="m-2 px-2 py-2 rounded-lg bg-slate-100"

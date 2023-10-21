@@ -20,7 +20,7 @@ const PendingPage: React.FC = () => {
 
       {/* Footer */}
       <footer className="text-center py-4">
-        <p>Copyright @ <span className="text-047E3C font-bold">HEIS</span> {currentYear}. All rights reserved!</p>
+        <p>Copyright @ <span className="text-047E3C font-bold">appor</span> {currentYear}. All rights reserved!</p>
         <button className="mt-2 px-4 py-2 bg-047E3C text-white rounded">Logout</button>
       </footer>
     </div>

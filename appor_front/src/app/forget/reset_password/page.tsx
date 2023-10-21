@@ -3,8 +3,9 @@ import { FormInput } from "@/components/form_input";
 export default function ForgetPassword() {
   
     return (
+        <>
         <main className="bg-slate-50 xl:px-56 lg:px-36 md:px-28 sm:px-16 px-8 pt-16 h-screen">
-            <div className="bg-green-700 lg:px-36 md:px-28 sm:px-16 px-8 rounded-2xl shadow-xl">
+            <div className="bg-blue-700 lg:px-36 md:px-28 sm:px-16 px-8 rounded-2xl shadow-xl">
               <h1 className="text-white font-bold text-center py-16 text-4xl">Reset Password</h1>
               <form action="">
                 <FormInput 
@@ -35,5 +36,9 @@ export default function ForgetPassword() {
             </div>
             <p className="text-neutral-500 text-xl font-normal font-['Poppins'] text-center absolute inset-x-0 bottom-0">Terms and conditions | FAQs</p>
         </main>
+        <footer className="bg-white py-4 text-center">
+        <h1 className="text-gray-700">© APPORIS 2023. All rights reserved.</h1>
+      </footer>
+    </>
     )
 }

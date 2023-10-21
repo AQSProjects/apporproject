@@ -6,6 +6,7 @@ import { FormInput } from '@/components/form_input'
 export default function ForgetPassword() {
   
   return (
+    <>
     <main className="flex sm:flex-row bg-slate-300 bg-white flex-col-reverse">
       <div className="lg:w-1/2 w-full pt-56 px-16 h-screen items-center ">
         <>
@@ -19,7 +20,7 @@ export default function ForgetPassword() {
             </ul>
         </>
       </div>
-      <div className="bg-green-700 lg:w-1/2 w-full py-28 h-screen sm:rounded-l-xl rounded-t-xl">
+      <div className="bg-blue-700 lg:w-1/2 w-full py-28 h-screen sm:rounded-l-xl rounded-t-xl">
         
         <h1 className="text-4xl font-bold text-white pt-8 py-2 px-24">Forgot <br/> Password?</h1>
         <p className="text-white px-24 py-4">Don't wory. <span className="font-semibold">We can help.</span></p>
@@ -39,11 +40,15 @@ export default function ForgetPassword() {
             <p className="text-white">Remembered your password?</p>
             <h4 className="text-white font-semibold">Back to <Link href='/' className="font-bold hover:underline">Login</Link></h4>
           </div>
-          <button className="bg-white hover:bg-green-50 text-green-300 font-semibold py-2 w-1/4 rounded-lg border">
+          <button className="bg-white hover:bg-blue-50 text-blue-500 font-semibold py-2 w-1/4 rounded-lg border">
             Next
           </button>
         </div>
       </div>
     </main>
+    <footer className="bg-white py-4 text-center">
+        <h1 className="text-gray-700">© APPORIS 2023. All rights reserved.</h1>
+      </footer>
+    </>
   )
 }

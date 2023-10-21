@@ -3,6 +3,7 @@ import Farm_form from '@/components/farm_form';
 import Farner_form from '@/components/farner_form';
 import { FileUpload } from '@/components/file_upload';
 import FormDropdown from '@/components/form_dropdown';
+import sign_up_bg_blue from '../../../assets/images/sign_up_bg_blue.png'
 import { FormInput } from '@/components/form_input';
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,7 +12,7 @@ import { SetStateAction, useState } from 'react'
 
 
 export default function Home() {
-    const [farmerSideBar, setFarmerSideBar] = useState('Farm info');
+    const [farmerSideBar, setFarmerSideBar] = useState('Registration');
     const [farmerList, setFarmerList] = useState<React.ReactNode[]>([]);
     const [menu, setMenu] = useState(false)
 
@@ -42,6 +43,15 @@ export default function Home() {
   
   return (
     <main className="sm:flex sm:flex-row bg-green-700">
+      <div className="lg:block w-1/3 ">
+        <Image
+          src={sign_up_bg_blue}
+          width={500}
+          height={500}
+          alt="The log in background"
+          className="w-1/2 h-full fixed"
+        />
+      </div>
       <div className={menu?'lg:w-4/12 w-full h-screen flex justify-center items-center z-0':"lg:w-4/12 w-full hidden h-screen sm:flex justify-center items-center z-0 "}>
         <div className={menu?"close":'hidden'} onClick={menuClick}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="text-white" viewBox="0 0 16 16">
@@ -53,7 +63,7 @@ export default function Home() {
 
             {(farmerSideBar === 'Required Documents')?<div className='vertical-line'></div>:<div className='vertical-line'></div>}
         <ul className='z-20'>
-            {(farmerSideBar === 'Farm info')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Farm info</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Farm info')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Farm info</li>}
+            {(farmerSideBar === 'Registration')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Registration</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Registration')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Registration</li>}
             {(farmerSideBar === 'Required Documents')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Required Documents</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Required Documents')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Required Documents</li>}
             {(farmerSideBar === 'Confirm')?<li className="text-white py-2 flex flex-row font-semibold" ><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div><div className="w-6 h-6 rounded-full mr-2 active-bullet"></div>Confirm</li>:<li className="text-gray-400 py-2 flex flex-row cursor-pointer" onClick={ () => handleClick('Confirm')}><div className="w-4 h-4 bg-gray-400 mt-1 mr-2 rounded-full"></div>Confirm</li>}
         </ul>
@@ -67,7 +77,7 @@ export default function Home() {
           </svg>
         </div>
         <form>
-          <div className={(farmerSideBar === 'Farm info')?'block':'hidden'}>
+          <div className={(farmerSideBar === 'Registration')?'block':'hidden'}>
             <h1 className="text-2xl font-bold py-4 text-center">Register your account</h1>
             <div className="px-8 sm:flex sm:flex-row sm:justify-between">
             <div className="w-1/2 sm:pr-4" >
@@ -85,7 +95,8 @@ export default function Home() {
             </svg></p>
           </div>
           <div className={(farmerSideBar === 'Required Documents')?'block pb-24':'hidden'}>
-            <h1 className="text-2xl font-bold py-4 text-center">Required documents</h1>
+          <p className="text-1xl font-bold py-4 text-left text-gray-500">Upload Required documents</p>
+            <h1 className="text-2xl font-bold py-4 text-left">Required documents</h1>
             
             <FileUpload 
               labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
@@ -98,37 +109,81 @@ export default function Home() {
 
             <FileUpload 
               labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
-              labelName=  "Upload export license"
+              labelName=  "Lease or proof of premise Ownership"
               inputType= "file"
               inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
-              inputName= "exportLicense"
+              inputName= "lease"
               containerClass= "px-8 py-2"
               />
 
             <FileUpload 
               labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
-              labelName=  "Upload ID of the representative"
+              labelName=  "Rwanda FDA fee receipt & notarized degree of pharmacist"
               inputType= "file"
               inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
-              inputName= "idRepresentative"
+              inputName= "RwandaFda"
               containerClass= "px-8 py-2"
               />
             
             <FileUpload 
               labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
-              labelName=  "Upload Proof of availability of produce to export"
+              labelName=  "Notarized Pharmacy practice license"
               inputType= "file"
               inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
-              inputName= "proofAvailability"
+              inputName= "notarizedPharma"
               containerClass= "px-8 py-2"
               />
 
             <FileUpload 
               labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
-              labelName=  "Upload copy of the contract with your agronomist"
+              labelName=  "CV of authorized personel"
               inputType= "file"
               inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
-              inputName= "contractAgronomist"
+              inputName= "cvAuth"
+              containerClass= "px-8 py-2"
+              />
+
+<FileUpload 
+              labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
+              labelName=  "Agreement between MD & authorized personel(if different)"
+              inputType= "file"
+              inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
+              inputName= "AgreementMD"
+              containerClass= "px-8 py-2"
+              />
+
+              <FileUpload 
+              labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
+              labelName=  "ID or passport of MD & authorized personel"
+              inputType= "file"
+              inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
+              inputName= "IDpassport"
+              containerClass= "px-8 py-2"
+              />
+
+<FileUpload 
+              labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
+              labelName=  "Technician's commitment to pharmacy laws"
+              inputType= "file"
+              inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
+              inputName= "technician"
+              containerClass= "px-8 py-2"
+              />
+              <FileUpload 
+              labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
+              labelName=  "Resignation or proof of service from last employee (if relevant)"
+              inputType= "file"
+              inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
+              inputName= "resignation"
+              containerClass= "px-8 py-2"
+              />
+
+<FileUpload 
+              labelClass= "block text-sm font-medium text-gray-900 dark:text-white"
+              labelName=  "Contract between authorized personel & pharmacy MD"
+              inputType= "file"
+              inputClass= "relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-white px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none "
+              inputName= "Contract"
               containerClass= "px-8 py-2"
               />
           </div>
@@ -144,7 +199,7 @@ export default function Home() {
               <button className="bg-white hover:bg-slate-50 text-gray-500 font-semibold py-2 w-1/4 rounded-lg border">
                 Back
               </button>
-              <button className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 w-1/4 rounded-lg border">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 w-1/4 rounded-lg border">
                 Next
               </button>
             </div>

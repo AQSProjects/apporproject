@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { FormInput } from '@/components/form_input'
 import { CheckToggle } from '@/components/check_toggle'
-import logo from '../assets/images/heis_logo.png'
 import { FormEvent } from 'react'
 import { link } from 'fs'
 
@@ -47,33 +46,26 @@ export default function Home() {
             inputClass="sr-only peer"
             containerClass="relative inline-flex items-center cursor-pointer"
             inputType="checkbox"
-            bulletClass="w-11 h-4 bg-gray-200 rounded-full peer dark:peer-focus:ring-green-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"
+            bulletClass="w-11 h-4 bg-gray-200 rounded-full peer dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
           />
           </div>
           <div className="px-16">
             <button 
             type='submit'
-            className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 w-full rounded-xl">
+            className="bg-blue-500 hover:bg-blur-700 text-white font-semibold py-2 w-full rounded-xl">
               SIGN IN
             </button>
           </div>
           <div className="text-center py-4">
-          <Link href="/forget" className="text-center text-green-500 font-extrabold font-['Poppins'] leading-tight">Forgot Password?</Link>
-          <p className="text-white">Don't have an account? <Link href="/registration" className="text-center text-green-500 font-extrabold font-['Poppins'] leading-tight">Sign Up</Link></p>
+          <Link href="/forget" className="text-center text-blue-800 font-extrabold font-['Poppins'] leading-tight">Forgot Password?</Link>
+          <p className="text-white">Don't have an account? <Link href="/registration" className="text-center text-blue-800 font-extrabold font-['Poppins'] leading-tight">Sign Up</Link></p>
           </div>
         </div>
         </form>
       </div>
-      <div className="bg-green-500 bg-opacity-40 lg:w-1/2 w-full py-28 h-screen sm:rounded-l-xl rounded-t-xl">
-        <Image
-          src={logo}
-          width={200}
-          height={200}
-          alt="The log in background"
-          className="max-w-lg mx-auto pt-4"
-        />
+      <div className="bg-blue-500 bg-opacity-40 lg:w-1/2 w-full py-28 h-screen sm:rounded-l-xl rounded-t-xl">
         <h1 className="text-4xl font-bold text-white pt-8 py-2 text-center">Welcome</h1>
-        <h1 className="text-4xl font-bold text-white py-2 text-center">HORTICULTURAL EXPORTERS INFORMATION SYSTEM - HEIS</h1>
+        <h1 className="text-4xl font-bold text-white py-2 text-center">APPOR INFORMATION SYSTEM - APPORIS</h1>
 
       </div>
     </main>

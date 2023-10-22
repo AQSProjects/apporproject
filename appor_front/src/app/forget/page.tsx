@@ -1,9 +1,17 @@
-/* eslint-disable react/no-unescaped-entities */
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FormInput } from '@/components/form_input'
+import { CheckToggle } from '@/components/check_toggle'
+import { useRouter } from 'next/navigation'
+import { FormEvent } from 'react'
 
 export default function ForgetPassword() {
+  const router = useRouter();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push('/forget/reset_password');
+  };
   
   return (
     <main className="flex sm:flex-row bg-slate-300 bg-white flex-col-reverse">
@@ -19,7 +27,7 @@ export default function ForgetPassword() {
             </ul>
         </>
       </div>
-      <div className="bg-green-700 lg:w-1/2 w-full py-28 h-screen sm:rounded-l-xl rounded-t-xl">
+      <div className="bg-blue-500 lg:w-1/2 w-full py-28 h-screen sm:rounded-l-xl rounded-t-xl">
         
         <h1 className="text-4xl font-bold text-white pt-8 py-2 px-24">Forgot <br/> Password?</h1>
         <p className="text-white px-24 py-4">Don't wory. <span className="font-semibold">We can help.</span></p>
@@ -37,11 +45,15 @@ export default function ForgetPassword() {
         <div className="flex flex-row justify-end px-24">
           <div className="text-right mr-4">
             <p className="text-white">Remembered your password?</p>
-            <h4 className="text-white font-semibold">Back to <Link href='/' className="font-bold hover:underline">Login</Link></h4>
+            <h4 className="text-white font-semibold">Back to <Link href='/' className="text-blue-800 font-bold hover:underline">Login</Link></h4>
           </div>
-          <button className="bg-white hover:bg-green-50 text-green-300 font-semibold py-2 w-1/4 rounded-lg border">
-            Next
-          </button>
+          <form onSubmit={handleSubmit}>
+            <button 
+             type='submit'
+             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg px-4 py-2 border ">
+              Next
+            </button>
+          </form>
         </div>
       </div>
     </main>

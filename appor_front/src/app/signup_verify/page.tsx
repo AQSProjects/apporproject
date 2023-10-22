@@ -11,7 +11,7 @@ const CheckMail: React.FC = () => {
   const router = useRouter();
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    router.push('/famers/register');
+    router.push('/documents');
   };
   return (
     <div className="overflow-hidden h-screen">

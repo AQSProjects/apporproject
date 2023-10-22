@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import { FormInput } from './form_input'
 import FormDropdown from './form_dropdown'

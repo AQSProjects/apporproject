@@ -4,7 +4,7 @@ import FormDropdown from './form_dropdown'
 import { FileUpload } from './file_upload'
 
 type InputProps = {
-    num: number,
+    num: any,
     size: number,
     deleter: any
   }

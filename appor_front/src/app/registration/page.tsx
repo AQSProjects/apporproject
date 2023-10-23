@@ -1,12 +1,13 @@
 "use client"
 import Image from 'next/image'
-import {useState} from 'react'
+import {FormEvent, useState} from 'react'
 import Link from 'next/link'
-import sign_up_bg from '../../assets/images/sign_up_bg.png'
+import sign_up_bg from '../../assets/images/sign_up_bg_png.png'
 import { FormInput } from '@/components/form_input'
 import FormDropdown from '@/components/form_dropdown'
 import { FormRadio } from '@/components/form_radio'
-import { useData } from '../../redux/getprovince';
+import { useData } from '../../redux/getprovince'
+import { useRouter } from 'next/navigation'
 
 
 interface Elements {
@@ -56,15 +57,19 @@ export default function Individual() {
 const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     if(event.target.value === 'individual'){
       setIsEmployee(false)
-    } else if(event.target.value === 'pharmacy'){
+    } else if(event.target.value === 'company'){
       setIsEmployee(true)
     }
     setIsEmployee(!isEmployee);
   };
-  
+  const router = useRouter();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push('/signup');
+  };
   return (
     <main className="flex flex-row w-full bg-slate-300">
-      <div className="lg:block w-1/2 ">
+      <div className="lg:block hidden w-1/2 ">
         <Image
           src={sign_up_bg}
           width={500}
@@ -75,69 +80,58 @@ const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       </div>
       <div className="bg-slate-50 lg:w-1/2 w-full">
         <h1 className="text-2xl font-bold py-8 text-center">Register your account</h1>
-        <p className="text-slate-400 text-base font-bold font-['Poppins'] text-center pb-8">Fill the details bellow of {isEmployee? 'Exporter':'pharmacy'} Information</p>
-        
-        <form>
+        <p className="text-slate-400 text-base font-bold font-['Poppins'] text-center pb-8">Fill the details bellow of {isEmployee? 'Exporter':'Company'} Information</p>
+        <form onSubmit={handleSubmit}>
           <div className="px-8 sm:flex sm:flex-row sm:justify-between w-full">     
-              <div className="w-full sm:pr-4" >
-                <label htmlFor="text" className="text-gray-700 text-sm font-normal font-['Poppins']">Exporter</label>
-                <select id="countries" onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                  <option className='py-2 ' value="individual">Individual</option>
-                  <option className='py-2 ' value="pharmacy">pharmacy</option>
-                </select>
-              </div>
+          <FormInput
+                labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
+                containerClass="w-full sm:pr-4"
+                labelName='Pharmacy Name'
+                inputType='text'
+                inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
+                inputName='Pharmacy Name'
+                inputPlaceholder='Pharmacy Name'
+               />
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="w-full sm:pl-4"
-                labelName={isEmployee? 'Exporter Name':'pharmacy Name'}
+                labelName='Managing Director'
                 inputType='text'
                 inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
-                inputName='ExporterName'
-                inputPlaceholder={isEmployee? 'Exporter Name':'pharmacy Name'}
+                inputName='Managing Director'
+                inputPlaceholder='Managing Director'
                />
           </div>
           <div className="px-8 sm:flex sm:flex-row sm:justify-between">
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="w-full sm:pr-4"
-                labelName={isEmployee? 'Exporter Email':'pharmacy Email'}
+                labelName='Email'
                 inputType='email'
                 inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
-                inputName='exporterEmail'
+                inputName='Email'
                 inputPlaceholder='name@email.com'
               />
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="w-full sm:pl-4"
-                labelName={isEmployee? 'Exporter TIN':'pharmacy TIN'}
+                labelName='TIN'
                 inputType='number'
                 inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
-                inputName='exporterTIN'
-                inputPlaceholder={isEmployee? 'Exporter TIN':'pharmacy TIN'}
+                inputName='TIN'
+                inputPlaceholder='TIN'
               />
           </div>
-            {isEmployee ? 
-            <FormInput
-              labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
-              containerClass="px-8 w-full"
-              labelName={isEmployee? 'Exporter ID/Passport':'pharmacy TIN'}
-              inputType='nationalId'
-              inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
-              inputName='representativeEmail'
-              inputPlaceholder='Exporter ID'
-            />
-            :''} 
-              
               <FormInput
                 labelClass="text-gray-700 text-sm font-normal font-['Poppins']"
                 containerClass="px-8 py-2" 
-                labelName= {isEmployee? 'Exporter Phone Numbe':'pharmacy Phone Numbe'} 
-                inputType='text' 
+                labelName= ' Phone Number' 
+                inputType='number' 
                 inputClass='border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' 
-                inputName='exporterPhone' 
+                inputName='Phone Number' 
                 inputPlaceholder='(+250) 7888321' 
               />
-          <p className="px-8 text-gray-700 text-sm font-normal font-['Poppins']">Exporter Location</p>
+          <p className="px-8 text-gray-700 text-sm font-normal font-['Poppins']">Pharmacy Location</p>
           <div className="py-2 px-8 sm:flex sm:flex-row sm:justify-between">
               <FormDropdown
                 containerClass="w-full sm:pr-4" 
@@ -210,7 +204,9 @@ const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
                 inputPlaceholder='Password' 
               />
           <div className="px-8 py-4">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 w-full rounded">
+            <button 
+             type='submit' 
+             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 w-full rounded">
               Continue
             </button>
           </div>

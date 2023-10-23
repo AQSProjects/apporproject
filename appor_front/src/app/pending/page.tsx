@@ -1,28 +1,36 @@
-// pages/pending.tsx
-import React from 'react';
+'use client'
+import React, { FormEvent } from 'react'
+import { useRouter } from 'next/navigation';
 
 const PendingPage: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const router = useRouter();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push('/');
+  };
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-white">
       {/* Title */}
       <div className="text-center mt-10 ">
-        <h1 className="text-2xl font-bold text-047E3C">Your Account is under Review</h1>
-        <p className="text-047E3C">Please wait</p>
+        <h1 className="text-2xl font-bold text-blue-600">Your Account is under Review</h1>
+        <p className="text-blue-600">Please wait</p>
       </div>
-
+      <form onSubmit={handleSubmit}>
       {/* Loading Animation */}
       <div className="flex-grow flex items-center justify-center">
-        <div className="border-gray-300 h-40 w-40 animate-spin rounded-full border-8 border-t-green-600">
+        <div className="border-gray-300 h-40 w-40 animate-spin rounded-full border-8 border-t-blue-600">
       </div>
       </div>
-
       {/* Footer */}
       <footer className="text-center py-4">
-        <p>Copyright @ <span className="text-047E3C font-bold">appor</span> {currentYear}. All rights reserved!</p>
-        <button className="mt-2 px-4 py-2 bg-047E3C text-white rounded">Logout</button>
+        <p>Copyright @ <span className="text-blue-600 font-bold">APPORIS</span> {currentYear}. All rights reserved!</p>
+        <button 
+         type='submit'
+         className="mt-2 px-4 py-2 bg-047E3C text-white rounded">Logout</button>
       </footer>
+      </form>
     </div>
   );
 };

@@ -1,12 +1,20 @@
+'use client'
+import React, { FormEvent } from 'react';
 import { FormInput } from "@/components/form_input";
+import { useRouter } from 'next/navigation';
 
 export default function ForgetPassword() {
+    const router = useRouter();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push('/');
+  };
   
     return (
         <main className="bg-slate-50 xl:px-56 lg:px-36 md:px-28 sm:px-16 px-8 pt-16 h-screen">
-            <div className="bg-green-700 lg:px-36 md:px-28 sm:px-16 px-8 rounded-2xl shadow-xl">
+            <div className="bg-blue-500 lg:px-36 md:px-28 sm:px-16 px-8 rounded-2xl shadow-xl">
               <h1 className="text-white font-bold text-center py-16 text-4xl">Reset Password</h1>
-              <form action="">
+              <form onSubmit={handleSubmit}>
                 <FormInput 
                     labelClass="text-gray-700 text-sm text-white font-normal font-['Poppins']"
                     containerClass="xl:px-36 md:px-16 sm:px-16 px-8 pb-8" 
@@ -27,7 +35,9 @@ export default function ForgetPassword() {
                 />
                 <div className="flex flex-col items-center justify-center">
 
-                    <button className="bg-white hover:bg-green-50 text-green-300 font-semibold py-2 my-16 w-1/4 rounded-lg border">
+                    <button 
+                     type='submit'
+                     className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 my-16 w-1/4 rounded-lg border">
                         Submit
                     </button>
                 </div>

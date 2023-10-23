@@ -54,7 +54,7 @@ export default function Home() {
         };
   
   return (
-    <main className="sm:flex sm:flex-row bg-blue-400">
+    <main className="sm:flex sm:flex-row bg-blue-500">
       <div className={menu?'lg:w-4/12 w-full h-screen flex justify-center items-center z-0':"lg:w-4/12 w-full hidden h-screen sm:flex justify-center items-center z-0 "}>
         <div className={menu?"close":'hidden'} onClick={menuClick}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="text-white" viewBox="0 0 16 16">
@@ -210,7 +210,7 @@ export default function Home() {
           </div>
         
             {(pharmacySideBar === 'Employees info')?<div className="py-2 px-8 flex flex-row justify-end"> 
-              <p className="bg-blue-400 hover:bg-blue-700 text-white font-semibold py-2 w-1/4 rounded-lg border text-center" onClick={ () => handleClick('Required Documents')}>
+              <p className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 w-1/4 rounded-lg border text-center" onClick={ () => handleClick('Required Documents')}>
                 Next
               </p>
             </div>:''}
@@ -218,7 +218,7 @@ export default function Home() {
               <p className="bg-white hover:bg-slate-50 text-gray-500 font-semibold py-2 w-1/4 rounded-lg border text-center" onClick={ () => handleClick('Employees info')}>
                 Back
               </p>
-              <p className="bg-blue-400 hover:bg-blue-700 text-white font-semibold py-2 w-1/4 rounded-lg border text-center" onClick={ () => handleClick('Confirm')}>
+              <p className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 w-1/4 rounded-lg border text-center" onClick={ () => handleClick('Confirm')}>
                 Next
               </p>
             </div>:''}
@@ -226,7 +226,7 @@ export default function Home() {
               <p className="bg-white hover:bg-slate-50 text-gray-500 font-semibold py-2 w-1/4 rounded-lg border text-center" onClick={ () => handleClick('Required Documents')}>
                 Back
               </p>
-              <button className="bg-blue-400 hover:bg-blue-700 text-white font-semibold py-2 w-1/4 rounded-lg border" type='submit'>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 w-1/4 rounded-lg border" type='submit'>
                 Submit
               </button>
             </div>:''}
